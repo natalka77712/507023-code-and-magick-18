@@ -47,9 +47,9 @@ window.renderStatistics = function (ctx, names, times) {
     var columnPlaceX = CLOUD_X + GAP * 3 + (INDENT + BAR_WIDTH) * i;
     var columnPlaceY = BAR_HEIGHT * times[i] / maxTime;
     ctx.fillStyle = '#000';
-    ctx.fillStyle = (names[i] !== 'Вы') ? 'hsl(240, 100%, 50%,' + Math.random() + ')' : 'rgba(255, 0, 0, 1)';
     ctx.fillText(names[i], columnPlaceX, TEXT_Y);
     ctx.fillText(Math.round(times[i]), columnPlaceX, CLOUD_HEIGHT - GAP * 4.5 - columnPlaceY);
+    ctx.fillStyle = (names[i] !== 'Вы') ? 'hsl(240,' + Math.round(Math.random() * 100) + '%,50%)' : 'rgba(255, 0, 0, 1)';
     ctx.fillRect(CLOUD_X + GAP * 3 + (INDENT + BAR_WIDTH) * i, BAR_Y, BAR_WIDTH, -columnPlaceY);
   }
 };
